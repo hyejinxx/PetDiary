@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.petdiary">
+
+    <!-- 갤러리 권한 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18"/>
+    <uses-permission android:name="andrioid.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/corgi_2026347_1280"
+        android:roundIcon="@drawable/corgi_2026347_1280"
+        android:label=""
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PetDiary">
+        <activity
+            android:name=".InputData_first"
+            android:exported="false" />
+        <activity
+            android:name=".Main"
+            android:exported="false" />
+        <activity
+            android:name=".Sign"
+            android:exported="false" />
+        <activity
+            android:name=".Start"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

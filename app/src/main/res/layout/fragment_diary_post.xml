@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="40dp"
+    android:gravity="center_horizontal"
+    tools:context=".Fragment.DiaryPost">
+
+
+    <ImageView
+        android:id="@+id/diaryImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_margin="20dp"
+        android:src="@drawable/corgi_2026347_1280" />
+
+
+    <EditText
+        android:id="@+id/diaryText"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:gravity="top"
+        android:hint="오늘 우리아이는 어땠나요?"
+        android:layout_marginBottom="10dp"
+        android:inputType="none" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_button"
+        android:text="저장" />
+
+
+</LinearLayout>

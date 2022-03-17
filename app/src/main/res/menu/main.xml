@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/scaduale_management"
+        android:title="일정관리"
+        app:showAsAction="always">
+    </item>
+    <item
+        android:id="@+id/diary"
+        android:title="한줄일기"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/pet_page"
+        android:title="펫페이지"
+        app:showAsAction="always"
+        ></item>
+</menu>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PetDiary</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="inputImage">사진 추가</string>
+    <string name="inputData">저장</string>
+    <string name="scaduleInputTV">할일추가</string>
+</resources>
