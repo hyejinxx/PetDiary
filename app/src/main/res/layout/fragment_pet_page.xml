@@ -1,82 +1,258 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:padding="50dp"
-    tools:context=".Fragment.PetPage">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".scenarios.main.petPage.PetPageFragment">
+    <data>
+        <variable
+            name = "viewModel"
+            type="com.hyejin.petdiary.scenarios.main.petPage.PetPageViewModel"/>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-
+    </data>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-        <TextView
-            android:id="@+id/nameView"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="이름:" />
+            android:layout_marginHorizontal="10dp">
+
+            <ImageView
+                android:id="@+id/emo"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignBottom="@id/framelayout"
+                android:layout_marginBottom="47dp"
+                android:layout_toStartOf="@+id/framelayout"
+                android:src="@drawable/emo1_1" />
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_below="@+id/emo"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/sticker1_2" />
+
+            <FrameLayout
+                android:id="@+id/framelayout"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/polaroid2">
+
+                <ImageView
+                    android:id="@+id/petPageImageView"
+                    android:layout_width="161dp"
+                    android:layout_height="155dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_cat" />
+
+                <Button
+                    android:id="@+id/petPageImageBtn"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:background="#00000000"
+                    android:textColor="#7E7E7E" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/cafe"
+                    android:gravity="center"
+                    android:text="#긔여워긔여워 #우주최강미모 \n #강아지야고양이야"
+                    android:textColor="#404040"
+                    android:textSize="12sp" />
+
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/emo3"
+                android:layout_width="45dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@+id/framelayout"
+                android:layout_toEndOf="@+id/framelayout"
+                android:src="@drawable/emo1_2" />
+
+            <ImageView
+                android:id="@+id/emo4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_above="@+id/emo3"
+                android:layout_marginStart="22dp"
+                android:layout_marginBottom="42dp"
+                android:layout_toEndOf="@+id/framelayout"
+                android:src="@drawable/sticker1_1" />
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/framelayout"
+                android:layout_centerHorizontal="true"
+
+                android:gravity="center">
+
+                <TableRow
+                    android:gravity="center"
+                    android:padding="15dp">
+
+                    <ImageButton
+                        android:id="@+id/modifyNameBtn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:background="#00000000"
+                        android:onClick="@{()-> viewModel.showDialog(0)}"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_pen" />
+
+                    <TextView
+                        android:id="@+id/nameTextView"
+                        android:fontFamily="@font/im_hyemin_bold"
+                        android:text="이름 :  "
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:fontFamily="@font/im_hyemin_bold"
+                        android:text="@{viewModel.petData.name}"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </TableRow>
+
+                <TableRow
+                    android:gravity="center"
+                    android:padding="15dp">
+
+                    <ImageButton
+                        android:id="@+id/modifyAgeBtn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:background="#00000000"
+                        android:onClick="@{()-> viewModel.showDialog(1)}"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_pen" />
+
+                    <TextView
+                        android:id="@+id/ageTextView"
+                        android:fontFamily="@font/im_hyemin_bold"
+                        android:text="나이 :  "
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:fontFamily="@font/im_hyemin_bold"
+                        android:text="@{viewModel.petData.age}"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </TableRow>
+
+                <TableRow
+                    android:gravity="center"
+                    android:padding="15dp">
+
+                    <ImageButton
+                        android:id="@+id/modifyGenderBtn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:background="#00000000"
+                        android:onClick="@{()-> viewModel.showDialog(2)}"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_pen" />
+
+                    <TextView
+                        android:id="@+id/genderTextView"
+                        android:fontFamily="@font/im_hyemin_bold"
+                        android:text="성별 :  "
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:fontFamily="@font/im_hyemin_bold"
+                        android:text="@{viewModel.petData.gender}"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+<!--                    <ImageView-->
+<!--                        android:id="@+id/genderIcon"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="35dp"-->
+<!--                        android:layout_gravity="start"-->
+<!--                        android:src="@drawable/icon_gender_female" />-->
+                </TableRow>
+
+                <TableRow
+                    android:gravity="center"
+                    android:padding="15dp">
+
+                    <ImageButton
+                        android:id="@+id/modifyBirthBtn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:background="#00000000"
+                        android:onClick="@{()-> viewModel.showDialog(3)}"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_pen" />
+
+                    <TextView
+                        android:id="@+id/birthTextView"
+                        android:fontFamily="@font/im_hyemin_bold"
+                        android:text="생일 :  "
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:fontFamily="@font/im_hyemin_bold"
+                        android:text="@{viewModel.birthString}"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </TableRow>
+
+                <TableRow
+                    android:gravity="center"
+                    android:padding="15dp">
+
+                    <ImageButton
+                        android:id="@+id/modifyWeightBtn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:background="#00000000"
+                        android:onClick="@{()-> viewModel.showDialog(4)}"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_pen" />
+
+                    <TextView
+                        android:id="@+id/weightTextView"
+                        android:fontFamily="@font/im_hyemin_bold"
+                        android:text="체중 :  "
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:fontFamily="@font/im_hyemin_bold"
+                        android:text="@{viewModel.petData.weight}"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </TableRow>
+            </TableLayout>
+        </RelativeLayout>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp">
 
-        <TextView
-            android:id="@+id/ageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="나이:" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp">
-
-        <TextView
-            android:id="@+id/genderView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="성별:" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp">
-
-        <TextView
-            android:id="@+id/birthView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="생일" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp">
-
-        <TextView
-            android:id="@+id/weightView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="몸무게" />
-    </LinearLayout>
-
-
-</LinearLayout>
+</layout>

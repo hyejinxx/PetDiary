@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="DatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
-        <item name="colorAccent">@color/datepicker</item>
-        <item name="colorControlActivated">@color/datepicker</item>
-        <item name="colorControlHighlight">@color/datepicker</item>
-        <item name="android:textColor">@color/datepicker</item>
+        <item name="colorAccent">@color/yellowthick</item>
+        <item name="colorControlActivated">#F8E2A9</item>
+        <item name="colorControlHighlight">@color/yellowthick</item>
+        <item name="android:textColor">@color/yellowthick</item>
+        <item name="android:font">@font/llll</item>
     </style>
     <style name="appBar" parent="Widget.AppCompat.ActionBar">
         <item name="colorPrimary">@color/iphone</item>
         <item name="android:textColorPrimary">@color/black</item>
-    </style>
-    <style name="Button_add_scadule">
-
     </style>
 
 

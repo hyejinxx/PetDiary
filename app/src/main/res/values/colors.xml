@@ -9,5 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="iphone">#F0F0F0</color>
     <color name="iphoneBlue">#2A71CD</color>
-    <color name="datepicker">#FFE6AB53</color>
+    <color name="datepicker">#B59567</color>
+    <color name="mainColor">#FFEECC</color>
+    <color name="pink">#FFC29090</color>
+    <color name="pink2">#D5B7B7</color>
+    <color name="yellow">#E4D09D</color>
+    <color name="pink3">#DAB3B3</color>
+    <color name="yellowthick">#FBCF81</color>
 </resources>

@@ -5,15 +5,20 @@
     <item
         android:id="@+id/scaduale_management"
         android:title="일정관리"
-        app:showAsAction="always">
+        app:showAsAction="always"
+        android:icon="@drawable/icon_list">
     </item>
     <item
         android:id="@+id/diary"
         android:title="한줄일기"
-        app:showAsAction="always"></item>
+        app:showAsAction="always"
+        android:icon="@drawable/icon_pencil">
+
+    </item>
     <item
         android:id="@+id/pet_page"
         android:title="펫페이지"
         app:showAsAction="always"
+        android:icon="@drawable/icon_cat"
         ></item>
 </menu>

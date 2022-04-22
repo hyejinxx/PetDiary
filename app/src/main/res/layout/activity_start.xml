@@ -4,29 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Start">
+    tools:context=".scenarios.intro.StartActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/llll"
+        android:gravity="center"
+        android:text="반려동물\n다이어리"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:layout_constraintVertical_weight="2"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.407" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/___001___"
-        app:layout_constraintBottom_toTopOf="@+id/btn_pm"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.81" />
-
-    <ImageView
-        android:id="@+id/btn_pm"
-        android:layout_width="196dp"
-        android:layout_height="187dp"
-        android:layout_gravity="center"
+        android:layout_width="442dp"
+        android:layout_height="445dp"
+        android:scaleType="fitEnd"
+        android:src="@drawable/dog"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78"
-        app:srcCompat="@drawable/corgi_2026347_1280" />
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_weight="5" />
 
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView"-->
+    <!--        android:layout_width="179dp"-->
+    <!--        android:layout_height="157dp"-->
+    <!--        android:layout_marginTop="40dp"-->
+    <!--        android:scaleType="fitXY"-->
+    <!--        android:src="@drawable/img_title"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

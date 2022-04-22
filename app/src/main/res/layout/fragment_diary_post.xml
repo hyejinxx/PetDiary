@@ -1,38 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingHorizontal="40dp"
-    android:gravity="center_horizontal"
-    tools:context=".Fragment.DiaryPost">
-
-
-    <ImageView
-        android:id="@+id/diaryImage"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_margin="20dp"
-        android:src="@drawable/corgi_2026347_1280" />
-
-
-    <EditText
-        android:id="@+id/diaryText"
+    tools:context=".scenarios.main.diaryPost.DiaryPostFragment">
+    <data>
+        <variable
+            name = "viewModel"
+            type="com.hyejin.petdiary.scenarios.main.diaryPost.DiaryPostViewModel"/>
+    </data>
+    
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:gravity="top"
-        android:hint="오늘 우리아이는 어땠나요?"
-        android:layout_marginBottom="10dp"
-        android:inputType="none" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal"
+            android:padding="5dp">
 
-    <Button
-        android:id="@+id/btn_save"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/radius_button"
-        android:text="저장" />
+            <ImageButton
+                android:id="@+id/calenderBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:onClick="@{() -> viewModel.showCalenderDialog()}"
+                android:background="@drawable/icon_calender_color" />
 
+            <TextView
+                android:id="@+id/dateTv"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:gravity="center"
+                android:text="@{viewModel.dateString}"
+                android:textColor="#D8854E"
+                android:textSize="20sp"
+                android:fontFamily="@font/sunday"
+                android:textStyle="bold"/>
+        </LinearLayout>
 
-</LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp">
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="#긔여워긔여워 #우주최강미모 #강아지야고양이야"
+                    android:fontFamily="@font/cafe"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:layout_marginTop="20dp"-->
+<!--                        android:layout_marginEnd="20dp"-->
+<!--                        android:layout_toStartOf="@+id/frLayout3"-->
+<!--                        android:src="@drawable/sticker7" />-->
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignBottom="@+id/frLayout3"
+                        android:layout_toEndOf="@+id/frLayout3"
+                        android:layout_marginBottom="35dp"
+                        android:src="@drawable/sticker2_2" />
+
+                    <FrameLayout
+                        android:id="@+id/frLayout3"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginVertical="10dp">
+
+                        <Button
+                            android:id="@+id/addImageBtn"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_gravity="center"
+                            android:background="#00000000"
+                            android:textColor="#7E7E7E" />
+
+                        <ImageView
+                            android:id="@+id/diaryImage"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_cat7" />
+
+                        <TextView
+                            android:id="@+id/diaryImageText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:gravity="center"
+                            android:text="사진 추가"
+                            android:textSize="10sp" />
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="70dp"-->
+<!--                            android:layout_height="70dp"-->
+<!--                            android:layout_gravity="top|start"-->
+<!--                            android:src="@drawable/sticker5" />-->
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBottom="@+id/frLayout3"
+                            android:layout_marginStart="11dp"
+                            android:layout_toEndOf="@+id/frLayout3"
+                            android:src="@drawable/sticker7"
+                            android:layout_gravity="bottom|end"/>
+                    </FrameLayout>
+                </RelativeLayout>
+<!--                <ImageView-->
+<!--                    android:layout_width="200dp"-->
+<!--                    android:layout_height="70dp"-->
+<!--                    android:src="@drawable/icon_playlist"-->
+<!--                    android:layout_marginBottom="10dp"/>-->
+                <EditText
+                    android:id="@+id/diaryEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:fontFamily="@font/cafe"
+                    android:hint="오늘 우리아이는 어땠나요?"
+                    android:inputType="none"
+                    android:textCursorDrawable="@drawable/text_cursor"
+                    android:background="@android:color/transparent"
+                    android:visibility="visible"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="@{viewModel.diaryContent}"/>
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginVertical="25dp"
+                    android:background="@drawable/radius_button"
+                    android:fontFamily="@font/im_hyemin_bold"
+                    android:onClick="@{()-> viewModel.saveData()}"
+                    android:text="저장" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>
