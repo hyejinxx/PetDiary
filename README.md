@@ -1,4 +1,4 @@
-# PetDiary
+# PetDiary : 반려동물 다이어리
 
 반려동물 다이어리
 
